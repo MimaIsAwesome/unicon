@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinect.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/kinect.js"></script>
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Kinect.js Example</h1>
+    <div id="skeletonData"></div>
+  
+    <script>
+        // Function to update skeleton data on the webpage
+        function updateSkeletonData(skeleton) {
+            // Display skeletal data on the webpage
+            document.getElementById("skeletonData").innerText = JSON.stringify(skeleton);
+        }
+
+        // Check if Kinect object is available
+        if (typeof Kinect !== 'undefined') {
+            // Initialize Kinect.js and start capturing skeletal data
+            var kinect = new Kinect();
+            kinect.start(updateSkeletonData);
+        } else {
+            console.error('Kinect.js library not loaded.');
+        }
+    </script>
+</body>
+</html>

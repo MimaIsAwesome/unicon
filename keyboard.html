@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+    <script src="/keyboard.js" defer></script>
+    <link rel="stylesheet" href="keyboard.css">
+<style>
+
+    .cursor-frozen {
+        position: fixed; /* Fix the cursor's position */
+    }
+</style>
+</head>
+<body>
+    <div class="button-container" style="top:3%;">
+        <div class="button-arrow" style="width: 15vh;">Translate</div>
+    </div>
+    <div class="button-container" style="top:8%;">
+        <div class="button-arrow" style="width: 15vh;" id="translate">[0,0,0]</div>
+    </div>
+<!--     First keyboard row -->
+    <div class="button-container" style="top:15%;">
+        <div class="button-arrow" id="b1">`</div>
+        <div class="button-arrow" id="b2">1</div>
+        <div class="button-arrow" id="b3">2</div>
+        <div class="button-arrow" id="b4">3</div>
+        <div class="button-arrow" id="b5">4</div>
+        <div class="button-arrow" id="b6">5</div>
+        <div class="button-arrow" id="b7">6</div>
+        <div class="button-arrow" id="b8">7</div>
+        <div class="button-arrow" id="b9">8</div>
+        <div class="button-arrow" id="b10">9</div>
+        <div class="button-arrow" id="b11">0</div>
+        <div class="button-arrow" id="b12">-</div>
+        <div class="button-arrow" id="b13">=</div>
+        <div class="button-arrow" style="width: 9vh;" id="b14">backspace</div> 
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b15">ins</div>
+        <div class="button-arrow" id="b16">hm</div>
+        <div class="button-arrow" id="b17">pu</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b18">num</div>
+        <div class="button-arrow" id="b19">/</div>
+        <div class="button-arrow" id="b20">*</div>
+    </div>
+ <!--     Second keyboard row --> 
+    <div class="button-container" style="top:20%;">
+        <div class="button-arrow" style="width: 7vh;" id="b21">tab</div>
+        <div class="button-arrow " id="b22">q</div>
+        <div class="button-arrow " id="b23">w</div>
+        <div class="button-arrow " id="b24">e</div>
+        <div class="button-arrow " id="b25">r</div>
+        <div class="button-arrow " id="b26">t</div>
+        <div class="button-arrow " id="b27">y</div>
+        <div class="button-arrow " id="b28">u</div>
+        <div class="button-arrow " id="b29">i</div>
+        <div class="button-arrow " id="b30">o</div>
+        <div class="button-arrow " id="b31">p</div>
+        <div class="button-arrow " id="b32">[</div>
+        <div class="button-arrow " id="b33">]</div>
+        <div class="button-arrow" style="width: 7vh;" id="b34">\</div> 
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b35">del</div>
+        <div class="button-arrow" id="b36">end</div>
+        <div class="button-arrow" id="b37">pd</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b38">7</div>
+        <div class="button-arrow" id="b39">8</div>
+        <div class="button-arrow" id="b40">9</div>
+    </div>
+   <!--     third keyboard row --> 
+    <div class="button-container" style="top:25%;">
+        <div class="button-arrow" style="width: 9vh;" id="b41">caps</div>
+        <div class="button-arrow " id="b42">a</div>
+        <div class="button-arrow " id="b43">s</div>
+        <div class="button-arrow " id="b44">d</div>
+        <div class="button-arrow " id="b45">f</div>
+        <div class="button-arrow " id="b46">g</div>
+        <div class="button-arrow " id="b47">h</div>
+        <div class="button-arrow " id="b48">j</div>
+        <div class="button-arrow " id="b49">k</div>
+        <div class="button-arrow " id="b50">l</div>
+        <div class="button-arrow " id="b51">;</div>
+        <div class="button-arrow " id="b52">'</div>
+        <div class="button-arrow " style="width: 10.5vh;" id="b53">enter</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b54">4</div>
+        <div class="button-arrow" id="b55">5</div>
+        <div class="button-arrow" id="b56">6</div>
+    </div>
+    <!--     forth keyboard row --> 
+    <div class="button-container" style="top:30%;">
+        <div class="button-arrow" style="width: 12.5vh;" id="b57">L shift</div>
+        <div class="button-arrow " id="b58">z</div>
+        <div class="button-arrow " id="b59">x</div>
+        <div class="button-arrow " id="b60">c</div>
+        <div class="button-arrow " id="b61">v</div>
+        <div class="button-arrow " id="b62">b</div>
+        <div class="button-arrow " id="b63">n</div>
+        <div class="button-arrow " id="b64">m</div>
+        <div class="button-arrow " id="b65">,</div>
+        <div class="button-arrow " id="b66">.</div>
+        <div class="button-arrow " id="b67">/</div>
+        <div class="button-arrow " style="width: 12.5vh;" id="b68">R shift</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b69">↑</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b70">1</div>
+        <div class="button-arrow" id="b71">2</div>
+        <div class="button-arrow" id="b72">3</div>
+    </div>
+  <!--     fifth keyboard row --> 
+    <div class="button-container" style="top:35%;">
+        <div class="button-arrow"  id="b73">L ctrl</div>
+        <div class="button-arrow" id="b74">win</div>
+        <div class="button-arrow" id="b75">L alt</div>
+        <div class="button-arrow" style="width: 42vh;" id="b76">space</div>
+        <div class="button-arrow" id="b77">R alt</div>
+        <div class="button-arrow" id="b78">fn</div>
+        <div class="button-arrow" id="b79">doc</div>
+        <div class="button-arrow" id="b80">R ctrl</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" id="b81">←</div>
+        <div class="button-arrow" id="b82">↓</div>
+        <div class="button-arrow" id="b83">→</div>
+        <div class="button-arrow"> </div>
+        <div class="button-arrow" style="width: 10.2vh;" id="b84">0</div>
+        <div class="button-arrow" id="b85">.</div>
+    </div>
+
+    <div class="button-container" id="cursorLockArea" style="top:50%;">
+        <div class="button-arrow" style="width: 20vh; height: 20vh" id="b86">
+        <div class="inner-circle" style="top:50%; left:25%;" id="inner-circle1">
+        </div>
+        </div>
+        <div class="button-arrow" style="width: 20vh; height: 20vh" id="b87">
+          <div class="inner-circle" style="top:50%; left:75%;" id="inner-circle2"></div>
+        </div>
+    </div>
+    <div class="button-container" style="top:65%;">
+      <div style="top:50%; left:20%;">
+        <p>Velocity</p>
+        <div id="RX" style="width:100px;">RX: 0</div>
+        <div id="RY" style="width:100px;" >RY: 0</div>
+      </div>
+      <div style="top:50%; left:20%;">
+        <p>Position</p>
+        <div id="RpX" style="width:100px;">0</div>
+        <div id="RpY" style="width:100px;">0</div>
+      </div>
+    </div>
+    <div class="button-container" style="top:75%;">
+      <button id="listenButton">Listen Mouse Inputs</button>
+    </div>
+  <!-- Invisible cursor that follows mouse position when frozen -->
+  <div class="cursor-frozen"></div>
+    <!-- Add a container for logging mouse coordinates -->
+    <div id="mouseCoordinates"></div>
+    <!--     Mouse row --> 
+    <!-- New avatar list -->
+    <div class="avatar-list-container">
+        <div class="avatar-list-header"><h2>Avatars</h2></div>
+        <br><br><br>
+    </div>
+
+<div class="param-list-container">
+    <div class="param-list-header"><h2>Settings</h2></div>
+    <br><br><br>
+
+    <!-- MQTT Broker and Port settings -->
+    <div class="">
+        <label for="mqttBroker">MQTT Broker</label><br>
+        <input type="text" id="mqttBroker" value="openlab.kpi.fei.tuke.sk">
+    </div>
+
+    <div class="">
+        <button id="connectButton">Connect</button>
+        <button id="disconnectButton">Disconnect</button>
+    </div>
+    
+    <div id="connectionStatus">Disconnected</div>
+<!--   Controller info -->
+    <div class="midbot">
+    </div>
+
+  
+  
+    <!-- FPS and Speed settings -->
+  <div class="">
+    <label for="fps">FPS</label><br>
+    <input type="range" id="fps" min="0" max="30" step="1" value="25">
+    <span id="fpsValue">25</span>
+  </div>
+
+<div class="">
+    <label for="speed">Translate speed multiplier</label><br>
+    <input type="range" id="tSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="tSpeedValue">1.0</span>
+</div>
+  
+<div class="">
+    <label for="speed">Rotate speed multiplier</label><br>
+    <input type="range" id="rSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="rSpeedValue">1.0</span>
+</div>  
+  
+</div>
+</body>
+</html>
