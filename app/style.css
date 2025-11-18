@@ -1,0 +1,511 @@
+body {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(https://i.gifer.com/TbMH.gif);
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    color: white;
+}
+.darkyell{
+  background-color: rgba(55,55,55,0.5);
+}
+.container {
+  padding: 5%;
+  justify-content: space-around; /* Adjust spacing between divs */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px; /* Adjust spacing between rows */
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 20px; /* Adjust spacing between rows */
+}
+.box1 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(90%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box1::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/60eae64d-ad6e-4479-9e3f-4c9c0a5dfe90.image.png?v=1710186079745'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box1:hover {
+    filter: none; /* Remove grayscale filter on hover */
+}
+
+.box1:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/60eae64d-ad6e-4479-9e3f-4c9c0a5dfe90.image.png?v=1710186079745'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box1 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+
+.box2 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(90%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box2::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/1baf4b92-8b2e-48a3-a5bf-69d847e71235.image.png?v=1710185950234'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box2:hover {
+    filter: none; /* Remove grayscale filter on hover */
+}
+
+.box2:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/1baf4b92-8b2e-48a3-a5bf-69d847e71235.image.png?v=1710185950234'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box2 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box3 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 0.5); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box3::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.cs.1worldsync.com/93/68/9368b4db-d316-47cc-9553-6b11c478a7a2.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box3:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box3:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.cs.1worldsync.com/93/68/9368b4db-d316-47cc-9553-6b11c478a7a2.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box3 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box4 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 0.5); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box4::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://s13emagst.akamaized.net/products/25209/25208458/images/res_d4bedfa2a0b23dab96b29effb15203b8.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box4:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box4:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://s13emagst.akamaized.net/products/25209/25208458/images/res_d4bedfa2a0b23dab96b29effb15203b8.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box4 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box5 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box5::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/Xbox_Kinect_23652.png?v=1710188185351'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box5:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box5:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/Xbox_Kinect_23652.png?v=1710188185351'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box5 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box6 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box6::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/170a07aa-d21f-4c8d-b007-6bf7212d057a.image.png?v=1710188437532'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box6:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box6:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.glitch.global/dea70c88-d38a-4bc0-80a7-75dc8a97c27a/170a07aa-d21f-4c8d-b007-6bf7212d057a.image.png?v=1710188437532'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box6 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box7 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box7::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.researchgate.net/profile/Isuru-Jayarathne/publication/309038915/figure/fig2/AS:416576584077313@1476331006081/EMOTIV-Epoc-EEG-Headset-Image-courtesy-http-emotivcom.png'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box7:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box7:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.researchgate.net/profile/Isuru-Jayarathne/publication/309038915/figure/fig2/AS:416576584077313@1476331006081/EMOTIV-Epoc-EEG-Headset-Image-courtesy-http-emotivcom.png'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box7 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box8 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box8::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://icons.iconarchive.com/icons/grafikartes/flat-retro-modern-2/512/midi-icon.png'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box8:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box8:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://icons.iconarchive.com/icons/grafikartes/flat-retro-modern-2/512/midi-icon.png'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box8 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+.box9 {
+    position: relative; /* Ensure proper positioning of pseudo-elements */
+    width: 100px; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: rgba(255, 255, 255, 1); /* dark gray with 50% opacity */
+    margin: 10px; /* adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif; /* Apply Comic Sans font */
+    overflow: hidden; /* Hide overflow content (text) */
+    filter: grayscale(80%); /* Make the background image grayscale */
+      border: 2px solid black; /* Add border */
+    border-radius: 20%; /* Make the edges circular */
+}
+
+.box9::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.tech4youstore.com/wp-content/uploads/2017/11/Tech4You-Store-VR-Box-Remote-at-lowest-price-149_001.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box9:hover {
+    filter: none; /* Remove grayscale filter on hover */
+/*     background-color: transparent; /* Hide the dark gray background on hover */ 
+}
+
+.box9:hover::before {
+    content: ''; /* Add content before the box (used to display background image) */
+    position: absolute; /* Position relative to the box */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.tech4youstore.com/wp-content/uploads/2017/11/Tech4You-Store-VR-Box-Remote-at-lowest-price-149_001.jpg'); /* replace 'your-image-url.jpg' with the path to your image */
+    background-size: cover; /* adjusts the background image size to cover the entire box */
+    background-position: center; /* positions the background image in the center of the box */
+}
+
+.box9 h1 {
+    position: relative; /* Ensure proper stacking of elements */
+    z-index: 1; /* Ensure <h1> is above the ::before pseudo-element */
+    font-family: 'Trebuchet MS', sans-serif; /* Apply font */
+    font-size: 24px; /* Adjust font size as needed */
+    color:   #FFFFFF;
+   -webkit-text-stroke: 1.5px black;
+}
+
+
+.bottom{
+  bottom: 10px;
+  right: 10px;
+  position: absolute; 
+  color: white;
+  font-size: 10px;
+}
+
+
+/* ICON REFERENCES */
+/* https://www.iconarchive.com/show/flat-retro-modern-2-icons-by-grafikartes/midi-icon.html */
+/* https://www.freepik.com/icon/accelerometer-sensor_10501047 */
+/* https://www.freepik.com/icon/gamepad_2991644 */
+/* https://icon-icons.com/icon/xbox-kinect/23652 */

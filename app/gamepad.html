@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamepad Controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+    <script src="/gamepad.js" defer></script>
+    <link rel="stylesheet" href="gamepad.css">
+
+</head>
+<body>
+  
+    <div class="transButt">
+      <div class="button-container left-up">
+          <div class="button-arrow " id="b7">6</div>
+          <div class="button-arrow " id="b5">4</div>
+      </div>
+
+      <div class="button-container right-up">
+          <div class="button-arrow " id="b8">7</div>
+          <div class="button-arrow " id="b6">5</div>
+      </div>
+      
+      <div class="button-container left">
+          <div class="button-arrow " id="b13">12</div>
+          <div class="button-arrow " id="b15">14</div>
+          <div class="button-arrow " id="b16">15</div>
+          <div class="button-arrow " id="b14">13</div>
+      </div>
+
+      <div class="button-container right">
+          <div class="button-alph " id="b1">1</div>
+          <div class="button-alph " id="b2">2</div>
+          <div class="button-alph " id="b3">3</div>
+          <div class="button-alph " id="b4">4</div>
+      </div>
+
+      <div class="button-container middle">
+          <div class="button-neat" id="b9">8</div>
+          <div class="button-neat" id="b17">16</div>
+          <div class="button-neat" id="b10">9</div>
+      </div>
+    </div>
+  
+    <div class="skeleButt">
+    
+      <div class="button-container" style="top:10%; left: 50%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="Neck"></div>
+        <div>NK 6</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 50%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="SpineShoulder"></div>
+        <div>SS 4</div>
+      </div>
+      
+      <div class="button-container" style="top:23%; left: 50%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="SpineMid"></div>
+        <div>SM 4</div>
+      </div>
+      
+      <div class="button-container" style="top:30%; left: 50%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="SpineBase"></div>
+        <div>SB 4</div>
+      </div>
+      
+<!--       LEFT HAND -->
+      <div class="button-container" style="top:15%; left: 44%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="ShoulderLeft"></div>
+        <div>SL 4</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 38%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="ElbowLeft"></div>
+        <div>EL 5</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 31%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="WristLeft"></div>
+        <div>WL 5</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 24%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="HandLeft"></div>
+        <div>HL 5</div>
+      </div>
+      
+<!--       Right HAND -->
+      <div class="button-container" style="top:15%; left: 56%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="ShoulderRight"></div>
+        <div>SR 4</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 62%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="ElbowRight"></div>
+        <div>ER 5</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 68%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="WristRight"></div>
+        <div>WR 5</div>
+      </div>
+      
+      <div class="button-container" style="top:15%; left: 74%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="HandRight"></div>
+        <div>HR 5</div>
+      </div>
+      
+<!--       Legs -->
+      
+      <div class="button-container" style="top:30%; left: 44%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="HipLeft"></div>
+        <div>HL 4</div>
+      </div>
+      <div class="button-container" style="top:35%; left: 44%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="KneeLeft"></div>
+        <div>KL 4</div>
+      </div>
+      <div class="button-container" style="top:40%; left: 44%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="AnkleLeft"></div>
+        <div>AL 4</div>
+      </div>
+      <div class="button-container" style="top:45%; left: 44%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="FootLeft"></div>
+        <div>FL 4</div>
+      </div>
+
+      <div class="button-container" style="top:30%; left: 56%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="HipRight"></div>
+        <div>HR 4</div>
+      </div>
+      <div class="button-container" style="top:35%; left: 56%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="KneeRight"></div>
+        <div>KR 4</div>
+      </div>
+      <div class="button-container" style="top:40%; left: 56%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="AnkleRight"></div>
+        <div>AR 4</div>
+      </div>
+      <div class="button-container" style="top:45%; left: 56%;" >
+        <div class="button-arrow" style="width:20px; height:20px" id="FootRight"></div>
+        <div>FR 4</div>
+      </div>
+
+    </div>
+  
+    <div class="container">
+        <div class="outer-circle"></div>
+        <div class="inner-circle" style="text-align:center;" id="b11">10</div>
+        <div class="text"> 
+            <p id="TX"> TX: 0.00</p>
+            <p id="TY"> TY: 0.00</p>
+        </div> 
+    </div>
+  
+    <div class="container">
+        <div class="outer-circle"></div>
+        <div class="inner-circle" style="text-align:center;" id="b12">11</div>
+        <div class="text"> 
+            <p id="RX"> RX: 0.00</p>
+            <p id="RY"> RY: 0.00</p>
+        </div>
+    </div>
+
+    <!-- New avatar list -->
+    <div class="avatar-list-container">
+        <div class="avatar-list-header"><h2>Avatars</h2></div>
+        <br><br><br>
+    </div>
+
+<div class="param-list-container">
+    <div class="param-list-header"><h2>Settings</h2></div>
+    <br><br><br>
+
+    <!-- MQTT Broker and Port settings -->
+    <div class="">
+        <label for="mqttBroker">MQTT Broker</label><br>
+        <input type="text" id="mqttBroker" value="openlab.kpi.fei.tuke.sk">
+    </div>
+
+    <div class="">
+        <button id="connectButton">Connect</button>
+        <button id="disconnectButton">Disconnect</button>
+    </div>
+    
+    <div id="connectionStatus">Disconnected</div>
+<!--   Controller info -->
+    <div class="midbot">
+      <div>Connected Controller:</div>
+      <p id="controller">No controller</p>      
+    </div>
+
+  
+  
+    <!-- FPS and Speed settings -->
+  <div class="">
+    <label for="fps">FPS</label><br>
+    <input type="range" id="fps" min="0" max="30" step="1" value="25">
+    <span id="fpsValue">25</span>
+  </div>
+
+<div class="">
+    <label for="speed">Translate speed multiplier</label><br>
+    <input type="range" id="tSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="tSpeedValue">1.0</span>
+</div>
+  
+<div class="">
+    <label for="speed">Rotate speed multiplier</label><br>
+    <input type="range" id="rSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="rSpeedValue">1.0</span>
+</div>  
+  <br>
+  <br>
+ <div style="margin: 10%">
+     <p >Controlling type (toggle to change)</p>  
+    <button id="toggleInstr">Transformations</button>
+</div>  
+  
+  
+</div>
+  
+</body>
+</html>

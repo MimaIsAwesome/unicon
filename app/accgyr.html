@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamepad Controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.3.4/mqtt.min.js"></script>
+    <script src="/accgyr.js" defer></script>
+    <link rel="stylesheet" href="accgyr.css">
+
+</head>
+<body>
+    <div class="button-container" style="top:15%;">
+        <div class="button-arrow" style="width: 30vh;">Translate</div>
+        <div class="button-arrow" style="width: 30vh;">Rotate</div>
+    </div>
+    <div class="button-container" style="top:25%;">
+        <div class="button-arrow" style="width: 30vh;" id="translate">[0,0,0]</div>
+        <div class="button-arrow" style="width: 30vh;" id="rotate">[0,0,0]</div>
+    </div>
+  
+    <div class="container">
+        <div id="acceleration">Acceleration: </div>
+        <div id="gyroscope">Gyroscope: </div>
+        <div id="compass">Compass: </div>
+    </div>
+  
+
+    <!-- New avatar list -->
+    <div class="avatar-list-container">
+        <div class="avatar-list-header"><h2>Avatars</h2></div>
+        <br><br><br>
+    </div>
+
+<div class="param-list-container">
+    <div class="param-list-header"><h2>Settings</h2></div>
+    <br><br><br>
+
+    <!-- MQTT Broker and Port settings -->
+    <div class="">
+        <label for="mqttBroker">MQTT Broker</label><br>
+        <input type="text" id="mqttBroker" value="openlab.kpi.fei.tuke.sk">
+    </div>
+
+    <div class="">
+        <button id="connectButton">Connect</button>
+        <button id="disconnectButton">Disconnect</button>
+    </div>
+    
+    <div id="connectionStatus">Disconnected</div>
+<!--   Controller info -->
+    <div class="midbot">
+      <div>Connected Controller:</div>
+      <p id="controller">No controller</p>      
+    </div>
+
+  
+  
+    <!-- FPS and Speed settings -->
+  <div class="">
+    <label for="fps">FPS</label><br>
+    <input type="range" id="fps" min="0" max="30" step="1" value="25">
+    <span id="fpsValue">25</span>
+  </div>
+
+<div class="">
+    <label for="speed">Translate speed multiplier</label><br>
+    <input type="range" id="tSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="tSpeedValue">1.0</span>
+</div>
+  
+<div class="">
+    <label for="speed">Rotate speed multiplier</label><br>
+    <input type="range" id="rSpeed" min="0" max="2" step="0.1" value="1">
+    <span id="rSpeedValue">1.0</span>
+</div>  
+  
+</div>
+  
+</body>
+</html>
